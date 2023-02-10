@@ -1,0 +1,327 @@
+TFecto@66J02F3 MINGW64 ~
+$ pwd
+/c/Users/tfecto
+
+TFecto@66J02F3 MINGW64 ~
+$ cd
+
+TFecto@66J02F3 MINGW64 ~
+$ cd ..
+
+TFecto@66J02F3 MINGW64 /c/Users
+$ cd/c/temp
+bash: cd/c/temp: No such file or directory
+
+TFecto@66J02F3 MINGW64 /c/Users
+$ cd TF_git_lab
+bash: cd: TF_git_lab: No such file or directory
+
+TFecto@66J02F3 MINGW64 /c/Users
+$ cd
+
+TFecto@66J02F3 MINGW64 ~
+$ cd /c/temp
+
+TFecto@66J02F3 MINGW64 /c/temp
+$ cd tf_git_lab
+
+TFecto@66J02F3 MINGW64 /c/temp/tf_git_lab
+$ git init
+Initialized empty Git repository in C:/Temp/TF_git_lab/.git/
+
+TFecto@66J02F3 MINGW64 /c/temp/tf_git_lab (master)
+$ git branch -m master main
+
+TFecto@66J02F3 MINGW64 /c/temp/tf_git_lab (main)
+$ git status
+On branch main
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        file_1.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+TFecto@66J02F3 MINGW64 /c/temp/tf_git_lab (main)
+$ git add file_1.txt
+
+TFecto@66J02F3 MINGW64 /c/temp/tf_git_lab (main)
+$ git commit -m "This is my first commit"
+[main (root-commit) 3fa59a1] This is my first commit
+ 1 file changed, 3 insertions(+)
+ create mode 100644 file_1.txt
+
+TFecto@66J02F3 MINGW64 /c/temp/tf_git_lab (main)
+$ git status
+On branch main
+nothing to commit, working tree clean
+
+TFecto@66J02F3 MINGW64 /c/temp/tf_git_lab (main)
+$ git status
+On branch main
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   file_1.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+TFecto@66J02F3 MINGW64 /c/temp/tf_git_lab (main)
+$ git diff file_1.txt
+diff --git a/file_1.txt b/file_1.txt
+index 3f2d360..0c5bce9 100644
+--- a/file_1.txt
++++ b/file_1.txt
+@@ -1,3 +1,4 @@
++This is my first change
+ This is the first lab
+ This is devbuild
+ This is going to be great
+\ No newline at end of file
+
+TFecto@66J02F3 MINGW64 /c/temp/tf_git_lab (main)
+$ git add file_1.txt
+
+TFecto@66J02F3 MINGW64 /c/temp/tf_git_lab (main)
+$ git commit -m "This added a new line of text to the top of the file"
+[main 9a4f695] This added a new line of text to the top of the file
+ 1 file changed, 1 insertion(+)
+
+TFecto@66J02F3 MINGW64 /c/temp/tf_git_lab (main)
+$ git log
+commit 9a4f69516bb74dd54459dbf30a4dd5cbd4e80384 (HEAD -> main)
+Author: Todd Fecto <toddfecto@quickenloans.com>
+Date:   Thu Jul 15 14:10:15 2021 -0400
+
+    This added a new line of text to the top of the file
+
+commit 3fa59a17ec66f5eca53c598124b9f1b228e9fa05
+Author: Todd Fecto <toddfecto@quickenloans.com>
+Date:   Thu Jul 15 14:06:33 2021 -0400
+
+    This is my first commit
+
+TFecto@66J02F3 MINGW64 /c/temp/tf_git_lab (main)
+$ git diff ID 9a4f695..ID 3fa59a1
+fatal: ambiguous argument 'ID': unknown revision or path not in the working tree.
+Use '--' to separate paths from revisions, like this:
+'git <command> [<revision>...] -- [<file>...]'
+
+TFecto@66J02F3 MINGW64 /c/temp/tf_git_lab (main)
+$ git diff 9a4f695 -- file_1.txt
+
+TFecto@66J02F3 MINGW64 /c/temp/tf_git_lab (main)
+$ git diff 9a4f695..3fa59a1
+diff --git a/file_1.txt b/file_1.txt
+index 0c5bce9..3f2d360 100644
+--- a/file_1.txt
++++ b/file_1.txt
+@@ -1,4 +1,3 @@
+-This is my first change
+ This is the first lab
+ This is devbuild
+ This is going to be great
+\ No newline at end of file
+
+TFecto@66J02F3 MINGW64 /c/temp/tf_git_lab (main)
+$ git checkout -b new_feature
+Switched to a new branch 'new_feature'
+
+TFecto@66J02F3 MINGW64 /c/temp/tf_git_lab (new_feature)
+$ git branch
+  main
+* new_feature
+
+TFecto@66J02F3 MINGW64 /c/temp/tf_git_lab (new_feature)
+$ git status
+On branch new_feature
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        file_2.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+TFecto@66J02F3 MINGW64 /c/temp/tf_git_lab (new_feature)
+$ git add file_2.txt
+
+TFecto@66J02F3 MINGW64 /c/temp/tf_git_lab (new_feature)
+$ git commit -m "This is my second file to commit"
+[new_feature 7c54ce0] This is my second file to commit
+ 1 file changed, 2 insertions(+)
+ create mode 100644 file_2.txt
+
+TFecto@66J02F3 MINGW64 /c/temp/tf_git_lab (new_feature)
+$ git status
+On branch new_feature
+nothing to commit, working tree clean
+
+TFecto@66J02F3 MINGW64 /c/temp/tf_git_lab (new_feature)
+$ git checkout main
+Switched to branch 'main'
+
+TFecto@66J02F3 MINGW64 /c/temp/tf_git_lab (main)
+$ git diff main..new_feature
+diff --git a/file_2.txt b/file_2.txt
+new file mode 100644
+index 0000000..ca4a738
+--- /dev/null
++++ b/file_2.txt
+@@ -0,0 +1,2 @@
++This is the 2nd file created
++This is going to get merged with first file
+\ No newline at end of file
+
+TFecto@66J02F3 MINGW64 /c/temp/tf_git_lab (main)
+$ git merge new_feature
+Updating 9a4f695..7c54ce0
+Fast-forward
+ file_2.txt | 2 ++
+ 1 file changed, 2 insertions(+)
+ create mode 100644 file_2.txt
+
+TFecto@66J02F3 MINGW64 /c/temp/tf_git_lab (main)
+$ git log
+commit 7c54ce0966a1615221e667d1e8b97c097b1d42c3 (HEAD -> main, new_feature)
+Author: Todd Fecto <toddfecto@quickenloans.com>
+Date:   Thu Jul 15 14:31:46 2021 -0400
+
+    This is my second file to commit
+
+commit 9a4f69516bb74dd54459dbf30a4dd5cbd4e80384
+Author: Todd Fecto <toddfecto@quickenloans.com>
+Date:   Thu Jul 15 14:10:15 2021 -0400
+
+    This added a new line of text to the top of the file
+
+commit 3fa59a17ec66f5eca53c598124b9f1b228e9fa05
+Author: Todd Fecto <toddfecto@quickenloans.com>
+Date:   Thu Jul 15 14:06:33 2021 -0400
+
+    This is my first commit
+
+TFecto@66J02F3 MINGW64 /c/temp/tf_git_lab (main)
+$ ls
+file_1.txt  file_2.txt
+
+TFecto@66J02F3 MINGW64 /c/temp/tf_git_lab (main)
+$ git remote add origin https://git.rockfin.com/tfecto/tf_project_lab.git
+
+TFecto@66J02F3 MINGW64 /c/temp/tf_git_lab (main)
+$ git remote -v
+origin  https://git.rockfin.com/tfecto/tf_project_lab.git (fetch)
+origin  https://git.rockfin.com/tfecto/tf_project_lab.git (push)
+
+TFecto@66J02F3 MINGW64 /c/temp/tf_git_lab (main)
+$ git push origin main
+Enumerating objects: 9, done.
+Counting objects: 100% (9/9), done.
+Delta compression using up to 16 threads
+Compressing objects: 100% (7/7), done.
+Writing objects: 100% (9/9), 899 bytes | 449.00 KiB/s, done.
+Total 9 (delta 0), reused 0 (delta 0), pack-reused 0
+remote: Searching for secrets...
+remote: Lines scanned: 6
+remote: Finished looking for secrets.
+remote: Visit http://shorty/fakeSecrets/ for info on committing fake/test secrets.
+remote: Visit http://shorty/secretOverride/ for override documentation.
+To https://git.rockfin.com/tfecto/tf_project_lab.git
+ * [new branch]      main -> main
+
+TFecto@66J02F3 MINGW64 /c/temp/tf_git_lab (main)
+$ git fetch origin
+remote: Enumerating objects: 4, done.
+remote: Counting objects: 100% (4/4), done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), 427 bytes | 61.00 KiB/s, done.
+From https://git.rockfin.com/tfecto/tf_project_lab
+   7c54ce0..cc7c7a9  main       -> origin/main
+
+TFecto@66J02F3 MINGW64 /c/temp/tf_git_lab (main)
+$ git diff main origin/main
+diff --git a/README.md b/README.md
+new file mode 100644
+index 0000000..1e0a913
+--- /dev/null
++++ b/README.md
+@@ -0,0 +1,3 @@
++# tf_project_lab
++TF First GitHub repository
++This is where it all begins
+
+TFecto@66J02F3 MINGW64 /c/temp/tf_git_lab (main)
+$ git merge origin/main
+Updating 7c54ce0..cc7c7a9
+Fast-forward
+ README.md | 3 +++
+ 1 file changed, 3 insertions(+)
+ create mode 100644 README.md
+
+TFecto@66J02F3 MINGW64 /c/temp/tf_git_lab (main)
+$ ls
+README.md  file_1.txt  file_2.txt
+
+TFecto@66J02F3 MINGW64 /c/temp/tf_git_lab (main)
+$ cd
+
+TFecto@66J02F3 MINGW64 ~
+$ cd /c/temp
+
+TFecto@66J02F3 MINGW64 /c/temp
+$ git clone https://git.rockfin.com/tfecto/myFirstRepo.git
+Cloning into 'myFirstRepo'...
+remote: Enumerating objects: 12, done.
+remote: Counting objects: 100% (12/12), done.
+remote: Compressing objects: 100% (8/8), done.
+remote: Total 12 (delta 0), reused 9 (delta 0), pack-reused 0
+Receiving objects: 100% (12/12), done.
+
+TFecto@66J02F3 MINGW64 /c/temp
+$ cd myFirstRepo
+
+TFecto@66J02F3 MINGW64 /c/temp/myFirstRepo (main)
+$ git checkout -b feature_branch
+Switched to a new branch 'feature_branch'
+
+TFecto@66J02F3 MINGW64 /c/temp/myFirstRepo (feature_branch)
+$ git add file_1.txt
+
+TFecto@66J02F3 MINGW64 /c/temp/myFirstRepo (feature_branch)
+$ git commit -m "I have updated Nadhis file"
+[feature_branch 6777e15] I have updated Nadhis file
+ 1 file changed, 3 insertions(+)
+
+TFecto@66J02F3 MINGW64 /c/temp/myFirstRepo (feature_branch)
+$ git status
+On branch feature_branch
+nothing to commit, working tree clean
+
+TFecto@66J02F3 MINGW64 /c/temp/myFirstRepo (feature_branch)
+$ git push origin feature_branch
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 16 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 406 bytes | 406.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+remote: Searching for secrets...
+remote: Lines scanned: 3
+remote: Finished looking for secrets.
+remote: Visit http://shorty/fakeSecrets/ for info on committing fake/test secrets.
+remote: Visit http://shorty/secretOverride/ for override documentation.
+remote:
+remote: Create a pull request for 'feature_branch' on GitHub by visiting:
+remote:      https://git.rockfin.com/tfecto/myFirstRepo/pull/new/feature_branch
+remote:
+To https://git.rockfin.com/tfecto/myFirstRepo.git
+ * [new branch]      feature_branch -> feature_branch
+
+TFecto@66J02F3 MINGW64 /c/temp/myFirstRepo (feature_branch)
+$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+TFecto@66J02F3 MINGW64 /c/temp/myFirstRepo (main)
+$

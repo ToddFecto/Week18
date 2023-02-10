@@ -1,0 +1,11 @@
+Generate API Key
+Your API key for toddfecto@rocketmortgage.com is:
+
+lm9lBypX85VNhjsPJ9RPaeT6G1S83r2dgdZYk3OZ
+You can start using this key to make web service requests. Simply pass your key in the URL when making a web request. Here's an example:
+
+https://api.nasa.gov/planetary/apod?api_key=lm9lBypX85VNhjsPJ9RPaeT6G1S83r2dgdZYk3OZ
+For additional support, please contact us. When contacting us, please tell us what API you're accessing and provide the following account details so we can quickly find you:
+
+Account Email: toddfecto@rocketmortgage.com
+Account ID: 07c7031c-47bc-4a85-8401-b33597c48f80
